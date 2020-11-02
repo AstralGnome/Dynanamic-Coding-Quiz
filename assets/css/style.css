@@ -1,0 +1,46 @@
+#start {
+    margin-top: 25px;
+    padding: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    flex-wrap: wrap;
+    left: 37%;
+    background-color: rgb(255, 80, 80);
+    border: solid 3px rgb(144, 0, 0);
+    border-radius: 7px;
+    color: rgb(248, 248, 248);
+    font-weight: 600;
+    font-stretch: wider;
+}
+
+#next {
+    margin-top: 450px;
+    padding: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    flex-wrap: wrap;
+    left: 38.75%;
+    background-color: rgb(255, 80, 80);
+    border: solid 3px rgb(144, 0, 0);
+    border-radius: 7px;
+    color: rgb(248, 248, 248);
+    font-weight: 600;
+    font-stretch: wider;
+}
+
+#seconds {
+    margin-top: 25px;
+    padding: 15px;
+    position: relative;
+    flex-wrap: wrap;
+    left: 65%;
+    background-color: rgb(255, 255, 255);
+    border: solid 3px rgb(48, 28, 228);
+    border-radius: 100px;
+    color: rgb(48, 28, 228);
+    font-weight: 600;
+    font-stretch: wider;
+    font-size: large;
+}
