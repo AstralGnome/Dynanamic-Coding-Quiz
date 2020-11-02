@@ -53,9 +53,12 @@ function startTimer() {
       }
   
     }, 1000);
+    
+    startButtonEl.style.display = "none";
+
   };
 
-  
+
     startButtonEl.addEventListener("click", function(){
         startTimer();
         displayQuestion(questionCount);
