@@ -15,19 +15,22 @@ var questions = [
   ["Currency?", "Dollar Bills", "Shells", "Dabloons", "Dollar Bills" ]
 ];
 
-//This function should a single question.
+//This function should create a single question.
 
 //Start should display questions and answers.
 function displayQuestion(questionNum) {
 
     questionEl.innerHTML = `<h1>${questions[questionNum][0]}</h1>
-    <h2 id="A1">${questions[questionNum][1]}</h2>
-    <h2 id="A2">${questions[questionNum][2]}</h2>
-    <h2 id="A3>${questions[questionNum][3]}</h2>`
+    <h2 id="a1">${questions[questionNum][1]}</h2>
+    <h2 id="a2">${questions[questionNum][2]}</h2>
+    <h2 id="a3">${questions[questionNum][3]}</h2>`
 
 //add variable to target answers. attach event listers to answer elements.
 
-    questions[1][0];
+    var firstAns = document.getElementById("a1");
+    var secondAns = document.getElementById("a2");
+    var thirdAns = document.getElementById("a3");
+
 
 //compare question to answers.
 

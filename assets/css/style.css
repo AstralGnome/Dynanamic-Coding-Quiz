@@ -1,11 +1,20 @@
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    
+}
+
 #start {
-    margin-top: 25px;
+    position: relative;
+    margin: 2em;
     padding: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
-    position: relative;
     flex-wrap: wrap;
-    left: 37%;
     background-color: rgb(255, 80, 80);
     border: solid 3px rgb(144, 0, 0);
     border-radius: 7px;
@@ -14,14 +23,13 @@
     font-stretch: wider;
 }
 
-#next {
-    margin-top: 450px;
+#next {   
+    position: relative;
     padding: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
-    position: relative;
+    margin: 2em;
     flex-wrap: wrap;
-    left: 38.75%;
     background-color: rgb(255, 80, 80);
     border: solid 3px rgb(144, 0, 0);
     border-radius: 7px;
@@ -34,13 +42,45 @@
     margin-top: 25px;
     padding: 15px;
     position: relative;
-    flex-wrap: wrap;
-    left: 65%;
     background-color: rgb(255, 255, 255);
-    border: solid 3px rgb(48, 28, 228);
-    border-radius: 100px;
+    border: solid 3.5px rgb(48, 28, 228);
+    border-radius: 200px;
     color: rgb(48, 28, 228);
-    font-weight: 600;
-    font-stretch: wider;
-    font-size: large;
+    font-weight: 400;
+    font-size: xx-large;
+
+}
+
+#questions {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(255, 80, 80);
+    border: solid 4px rgb(144, 0, 0);
+    border-radius: 7px;
+    color: rgb(255, 255, 255);
+
+}
+
+h1 {
+    border-bottom: solid 4px rgb(144, 0, 0);
+    text-align: center;
+    padding-bottom: .5em;
+    padding-top: .25em;
+    margin-bottom: 1.15em;
+    font-size: 30px;
+    font-weight: 400;
+
+}
+
+h2 {
+    text-align: center;
+    margin: 8%;
+    font-size: 20px;
+    font-weight: 400;
+
 }
