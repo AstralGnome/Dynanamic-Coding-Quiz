@@ -67,6 +67,20 @@ body {
 
 }
 
+#submit {
+    position: relative;
+    padding: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+    background-color: rgb(144, 0, 0);
+    border: solid 3px rgb(255, 80, 80);
+    border-radius: 7px;
+    color: rgb(248, 248, 248);
+    font-weight: 600;
+    font-stretch: wider;
+}
+
 h1 {
     border-bottom: solid 4px rgb(144, 0, 0);
     text-align: center;

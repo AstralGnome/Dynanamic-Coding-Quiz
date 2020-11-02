@@ -4,6 +4,7 @@ var questionEl = document.getElementById("questions");
 // var currencyAns = document.getElementById("currencyA");
 var startButtonEl = document.getElementById("start");
 var nextButtonEl = document.getElementById("next");
+var submitButtonEl = document.getElementById("submit");
 var timeEl = document.querySelector(".time");
 var interval;
 var questionCount = 0;
@@ -47,30 +48,14 @@ function startTimer() {
       secondsLeft--;
       timeEl.textContent = secondsLeft;
   
-      if(secondsLeft === 0) {
+      if(secondsLeft <= 0) {
         clearInterval(timerInterval);
-        sendMessage();
       }
   
     }, 1000);
-  }
+  };
 
-
-// setInterval() {
-//     totalSeconds = 100;
-
-//     if (totalSeconds >= 0) {
-//         totalSeconds--;
-//     }
-// };
-
-// questionEl = document.append();
-
-// console.log(questionEl);
-// function renderQuestion()
-// function displayQuestion()
-
-// function startGame () {
+  
     startButtonEl.addEventListener("click", function(){
         startTimer();
         displayQuestion(questionCount);
