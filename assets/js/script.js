@@ -10,9 +10,9 @@ var interval;
 var questionCount = 0;
 
 var questions = [
-  ["Velocity?", "Weight", "Height", "Speed", "Speed"],
-  ["Color?", "White", "Black", "Blue", "Blue"],
-  ["Currency?", "Shells", "Dabloons", "Dollar Bills", "Dollar Bills"]
+  ["Velocity?", "Weight", "Height", "Volume", "Speed", "Speed"],
+  ["Color?", "White", "Blue", "Black", "Opaque", "Blue"],
+  ["Currency?", "Dollar Bills", "Shells", "Doubloons", "Pokemon", "Dollar Bills"]
 ];
 
 //This function should create a single question.
@@ -21,16 +21,18 @@ var questions = [
 function displayQuestion(questionNum) {
 
     questionEl.innerHTML = `<h1>${questions[questionNum][0]}</h1>
-    <h2 id="a1">${questions[questionNum][1]}</h2>
-    <h2 id="a2">${questions[questionNum][2]}</h2>
-    <h2 id="a3">${questions[questionNum][3]}</h2>`
+    <button id="a1">${questions[questionNum][1]}</button>
+    <button id="a2">${questions[questionNum][2]}</button>
+    <button id="a3">${questions[questionNum][3]}</button>
+    <button id="a4">${questions[questionNum][4]}</button>`
 
 //add variable to target answers. attach event listers to answer elements.
 
-    var velocityWrong;
-    velocityWrong = questions[0][1, 2, 3].innerText;
+    // var velocityWrong;
+    // velocityWrong = questions[0][1, 2, 3].innerText;
 
-    console.log(velocityAns);
+    // console.log(velocityAns);
+    
     var secondAns = document.getElementById("a2");
     var thirdAns = document.getElementById("a3");
 
@@ -41,7 +43,7 @@ function displayQuestion(questionNum) {
 
 }
 
-var secondsLeft = 100;
+var secondsLeft = 10;
 
 function startTimer() {
     var timerInterval = setInterval(function() {
