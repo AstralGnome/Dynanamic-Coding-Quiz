@@ -8,11 +8,13 @@ var submitButtonEl = document.getElementById("submit");
 var timeEl = document.querySelector(".time");
 var interval;
 var questionCount = 0;
+var score = 0;
 
 var questions = [
   ["Velocity?", "Weight", "Height", "Volume", "Speed", "Speed"],
   ["Color?", "White", "Blue", "Black", "Opaque", "Blue"],
   ["Currency?", "Dollar Bills", "Shells", "Doubloons", "Pokemon", "Dollar Bills"]
+  // ["Your score is...", " "," "," "," "," "]
 ];
 
 //This function should create a single question.
@@ -28,43 +30,76 @@ function displayQuestion(questionNum) {
 
 //add variable to target answers. attach event listers to answer elements.
 
-    // var velocityWrong;
-    // velocityWrong = questions[0][1, 2, 3].innerText;
 
-    // console.log(velocityAns);
-    
+    var firstAns = document.getElementById("a1");
     var secondAns = document.getElementById("a2");
     var thirdAns = document.getElementById("a3");
+    var fourthAns = document.getElementById("a4");
+    
+    // console.log(firstAns);
+
+    questionEl.addEventListener("click", function(event){
+      event.preventDefault();
+      
+      var rightAns = questions[questionNum][5];
+
+      var questionTar = event.target;
+
+      if (questionTar.textContent == rightAns){
+          secondsLeft += 5;
+          // alert("right answer!")
+      }
+        else{
+          // alert("wrong answer!")
+          secondsLeft -= 5;
+        };
+
+      questionCount++;
+    
+
+      displayQuestion(questionCount);
 
 
+    }, {once: true});
+    
+   
+    };
 //compare question to answers.
+// firstAns.addEventListener("click" function() {
+//     if(firstAns === questionNum[5]){
+//         alert("that's the right answer!")
+//     }
+// });
 
-//Display next question.
-
-}
-
-var secondsLeft = 10;
+var secondsLeft = 5;
 
 function startTimer() {
     var timerInterval = setInterval(function() {
       secondsLeft--;
       timeEl.textContent = secondsLeft;
   
-      if(secondsLeft <= 0) {
+      if (secondsLeft <= 0) {
         clearInterval(timerInterval);
-      }
-  
+      };
+
     }, 1000);
+  
     
     startButtonEl.style.display = "none";
-
+    
+    submitButtonEl.addEventListener("click", function(){
+      clearInterval(timerInterval);
+    });
   };
+    
+    
 
-
+    
     startButtonEl.addEventListener("click", function(){
         startTimer();
         displayQuestion(questionCount);
     });
+  
 
     nextButtonEl.addEventListener("click", function(){
         questionCount++;
