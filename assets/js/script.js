@@ -1,4 +1,6 @@
 var questionEl = document.getElementById("questions");
+navEl = document.getElementById("navbar");
+scoreEl = document.getElementById("score");
 // var velocityAns = document.getElementById("velocityA");
 // var colorAns = document.getElementById("colorA");
 // var currencyAns = document.getElementById("currencyA");
@@ -8,7 +10,6 @@ var submitButtonEl = document.getElementById("submit");
 var timeEl = document.querySelector(".time");
 var interval;
 var questionCount = 0;
-var score = 0;
 
 var questions = [
   ["Velocity?", "Weight", "Height", "Volume", "Speed", "Speed"],
@@ -87,9 +88,15 @@ function startTimer() {
     
     startButtonEl.style.display = "none";
     
-    submitButtonEl.addEventListener("click", function(){
+    submitButtonEl.addEventListener("click", function() {
       clearInterval(timerInterval);
-    });
+      questionEl.style.display = "none"
+      navEl.style.display = "none"
+      nextButtonEl.style.display = "none"
+      submitButtonEl.style.display = "none"
+      timeEl.style.display = "none"
+      scoreEl.innerText = "Your score is... \n \n" + secondsLeft.toString() + " pts!\n"; 
+        });
   };
     
     
