@@ -1,6 +1,7 @@
 var questionEl = document.getElementById("questions");
 navEl = document.getElementById("navbar");
 scoreEl = document.getElementById("score");
+formBoxEl = document.getElementById("formBox")
 // var velocityAns = document.getElementById("velocityA");
 // var colorAns = document.getElementById("colorA");
 // var currencyAns = document.getElementById("currencyA");
@@ -12,6 +13,9 @@ var interval;
 var questionCount = 0;
 
 scoreEl.style.display = "none"
+formBoxEl.style.display = "none"
+nextButtonEl.style.display = "none"
+submitButtonEl.style.display = "none"
 
 var questions = [
   ["Velocity?", "Weight", "Height", "Volume", "Speed", "Speed"],
@@ -84,6 +88,8 @@ function startTimer() {
       if (secondsLeft <= 0 || questionCount >= questions.length) {
         clearInterval(timerInterval);
         nextButtonEl.style.display = "none"
+        submitButtonEl.style.display = "block"
+
       };
 
 
@@ -98,7 +104,9 @@ function startTimer() {
       navEl.style.display = "none"
       submitButtonEl.style.display = "none"
       timeEl.style.display = "none"
+      nextButtonEl.display = "none"
       scoreEl.style.display = "block"
+      formBoxEl.style.display = "block"
       scoreEl.innerText = "Your score is... \n" + secondsLeft.toString() + " units!\n"; 
         });
   };
@@ -107,6 +115,7 @@ function startTimer() {
     startButtonEl.addEventListener("click", function(){
         startTimer();
         displayQuestion(questionCount);
+        nextButtonEl.style.display = "block"
     });
   
 
