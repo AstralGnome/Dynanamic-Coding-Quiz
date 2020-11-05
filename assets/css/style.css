@@ -29,7 +29,7 @@ body {
     padding: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin: 2em;
+    margin-top: 2em;
     flex-wrap: wrap;
     background-color: rgb(255, 80, 80);
     border: solid 3px rgb(144, 0, 0);
@@ -69,6 +69,7 @@ body {
 
 #submit {
     position: relative;
+    margin-top: 2em;
     padding: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -111,10 +112,11 @@ h1 {
 #score {
     text-align: center;
     position: relative;
-    margin-top: 50px;
+    margin-top: 30px;
     border: solid 3px rgb(255, 80, 80);
-    border-radius: 7px;
-    padding: 5px;
+    border-radius: 25px;
+    padding: 12px;
+    line-height: 1.5;
 
 
 }

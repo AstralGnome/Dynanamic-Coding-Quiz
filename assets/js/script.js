@@ -11,6 +11,8 @@ var timeEl = document.querySelector(".time");
 var interval;
 var questionCount = 0;
 
+scoreEl.style.display = "none"
+
 var questions = [
   ["Velocity?", "Weight", "Height", "Volume", "Speed", "Speed"],
   ["Color?", "White", "Blue", "Black", "Opaque", "Blue"],
@@ -52,11 +54,11 @@ function displayQuestion(questionNum) {
       }
         else{
           // alert("wrong answer!")
-          secondsLeft -= 5;
+          secondsLeft -= 3;
         };
 
       questionCount++;
-    
+    console.log(questionCount);
 
       displayQuestion(questionCount);
 
@@ -79,9 +81,11 @@ function startTimer() {
       secondsLeft--;
       timeEl.textContent = secondsLeft;
   
-      if (secondsLeft <= 0) {
+      if (secondsLeft <= 0 || questionCount >= questions.length) {
         clearInterval(timerInterval);
+        nextButtonEl.style.display = "none"
       };
+
 
     }, 1000);
   
@@ -92,14 +96,12 @@ function startTimer() {
       clearInterval(timerInterval);
       questionEl.style.display = "none"
       navEl.style.display = "none"
-      nextButtonEl.style.display = "none"
       submitButtonEl.style.display = "none"
       timeEl.style.display = "none"
-      scoreEl.innerText = "Your score is... \n \n" + secondsLeft.toString() + " pts!\n"; 
+      scoreEl.style.display = "block"
+      scoreEl.innerText = "Your score is... \n" + secondsLeft.toString() + " units!\n"; 
         });
   };
-    
-    
 
     
     startButtonEl.addEventListener("click", function(){
