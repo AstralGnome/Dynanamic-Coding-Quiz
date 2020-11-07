@@ -1,10 +1,10 @@
 var questionEl = document.getElementById("questions");
 navEl = document.getElementById("navbar");
+
 scoreEl = document.getElementById("score");
+scoreInputEl = document.getElementById("scoreInput")
 formBoxEl = document.getElementById("formBox")
-// var velocityAns = document.getElementById("velocityA");
-// var colorAns = document.getElementById("colorA");
-// var currencyAns = document.getElementById("currencyA");
+
 var startButtonEl = document.getElementById("start");
 var nextButtonEl = document.getElementById("next");
 var submitButtonEl = document.getElementById("submit");
@@ -38,10 +38,10 @@ function displayQuestion(questionNum) {
 //add variable to target answers. attach event listers to answer elements.
 
 
-    var firstAns = document.getElementById("a1");
-    var secondAns = document.getElementById("a2");
-    var thirdAns = document.getElementById("a3");
-    var fourthAns = document.getElementById("a4");
+    // var firstAns = document.getElementById("a1");
+    // var secondAns = document.getElementById("a2");
+    // var thirdAns = document.getElementById("a3");
+    // var fourthAns = document.getElementById("a4");
     
     // console.log(firstAns);
 
@@ -87,11 +87,11 @@ function startTimer() {
   
       if (secondsLeft <= 0 || questionCount >= questions.length) {
         clearInterval(timerInterval);
+        timeEl.style.animation = "glowing 999999ms infinite";
         nextButtonEl.style.display = "none"
         submitButtonEl.style.display = "block"
 
       };
-
 
     }, 1000);
   
@@ -107,6 +107,7 @@ function startTimer() {
       nextButtonEl.display = "none"
       scoreEl.style.display = "block"
       formBoxEl.style.display = "block"
+      
       scoreEl.innerText = "Your score is... \n" + secondsLeft.toString() + " units!\n"; 
         });
   };
