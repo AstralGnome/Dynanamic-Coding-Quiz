@@ -1,37 +1,24 @@
-scoreEl = document.getElementById("score");
-scoreInputEl = document.getElementById("scoreInput")
-formBoxEl = document.getElementById("formBox")
+//score is from index.html
+var scoreEl = document.getElementById("score");
 
-  // get inputted name and store with score in local storage
+var scoreInputEl = document.getElementById("scoreInput");
+var formBoxEl = document.getElementById("formBox");
+var highScoreList = document.getElementById("high-scores");
 
-  // get local storage
-  // if(localStorage.getItem("score") === null) {
-  //   localStorage.setItem("score", JSON.stringify(theObject))
 
-  // }
 
-  //if scores are already scored, retrieve them first then add to them before...time
+var contestants = [];
 
-  //navigate to high scores page
 
-scoreInputEl.addEventListener("return", function(event) {
-  event.preventDefault();
-  
-  // create user object from submission
-  var user = scoreInputEl.value.trim()
-  console.log(user);
-  // validate the fields
-  if (user.value === "") {
-    displayMessage("error", "Name cannot be blank");
+function scoreList(){
+    var storedArray = JSON.parse(localStorage.getItem("playerListHighScores"));
+    console.log(storedArray);
 
-  }else{
-    // set new submission
-    localStorage.setItem("user", JSON.stringify(user));
-    
-    // get most recent submission
-    var lastUser = JSON.parse(localStorage.getItem("user"));
-    
-    // userFirstNameSpan.textContent = lastUser.firstName;
-
-  }
-});
+    for(i = 0; i < contestants.length; i++){
+        var li = document.createElement("li");
+        li.innerHTML =  "<span>Initials:</span>"+ storedArray[i].name + 
+        "  <span>Score:</span>" + storedArray[i].score + 
+        " <span>Time:</span>" + storedArray[i].time;
+        listHighscores.append(li);
+    }
+}

@@ -78,7 +78,7 @@ function displayQuestion(questionNum) {
 //     }
 // });
 
-var secondsLeft = 5;
+var secondsLeft = 10;
 
 function startTimer() {
     var timerInterval = setInterval(function() {
@@ -109,8 +109,42 @@ function startTimer() {
       formBoxEl.style.display = "block"
       
       scoreEl.innerText = "Your score is... \n" + secondsLeft.toString() + " units!\n"; 
-        });
+      document.getElementById("formBox").addEventListener("submit", function(event){
+        event.preventDefault();
+        
+        if (localStorage.getItem("highScores") === null) {
+          localStorage.setItem("highScores", JSON.stringify([]))
+        }
+        
+        var highScores = JSON.parse(localStorage.getItem("highScores"));
+        
+        console.log(scoreInputEl)
+
+        highScores.push(scoreInputEl.value + "------" + secondsLeft);
+        
+        localStorage.setItem("highScores", JSON.stringify(highScores))
+        
+        console.log(highScores)
+        displayHighScores();
+        
+      })
+    });
   };
+  
+  
+  function displayHighScores(){
+    // localStorage.getItem("highScores", JSON.parse(highScores))
+    //want to read from local storage display data on page.
+
+    // for loop for more than one, append
+
+  var retrievedData = localStorage.getItem("highScores")
+
+  highScores = JSON.parse(retrievedData)
+
+  document.body.innerHTML = `<h1 id="nameColumns">${highScores}</h1>`
+
+  }
 
     
     startButtonEl.addEventListener("click", function(){
