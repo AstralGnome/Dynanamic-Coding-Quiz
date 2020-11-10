@@ -7,18 +7,18 @@ var highScoreList = document.getElementById("high-scores");
 
 
 
-var contestants = [];
+// var contestants = [];
 
 
-function scoreList(){
-    var storedArray = JSON.parse(localStorage.getItem("playerListHighScores"));
-    console.log(storedArray);
+// function scoreList(){
+//     var storedArray = JSON.parse(localStorage.getItem("playerListHighScores"));
+//     console.log(storedArray);
 
-    for(i = 0; i < contestants.length; i++){
-        var li = document.createElement("li");
-        li.innerHTML =  "<span>Initials:</span>"+ storedArray[i].name + 
-        "  <span>Score:</span>" + storedArray[i].score + 
-        " <span>Time:</span>" + storedArray[i].time;
-        listHighscores.append(li);
-    }
-}
+//     for(i = 0; i < contestants.length; i++){
+//         var li = document.createElement("li");
+//         li.innerHTML =  "<span>Initials:</span>"+ storedArray[i].name + 
+//         "  <span>Score:</span>" + storedArray[i].score + 
+//         " <span>Time:</span>" + storedArray[i].time;
+//         listHighscores.append(li);
+//     }
+// }

@@ -4,7 +4,7 @@ navEl = document.getElementById("navbar");
 scoreEl = document.getElementById("score");
 scoreInputEl = document.getElementById("scoreInput")
 formBoxEl = document.getElementById("formBox")
-
+var setScoreEl = document.getElementById("setScore")
 var startButtonEl = document.getElementById("start");
 var nextButtonEl = document.getElementById("next");
 var submitButtonEl = document.getElementById("submit");
@@ -12,6 +12,7 @@ var timeEl = document.querySelector(".time");
 var interval;
 var questionCount = 0;
 
+setScoreEl.style.display = "none"
 scoreEl.style.display = "none"
 formBoxEl.style.display = "none"
 nextButtonEl.style.display = "none"
@@ -107,6 +108,7 @@ function startTimer() {
       nextButtonEl.display = "none"
       scoreEl.style.display = "block"
       formBoxEl.style.display = "block"
+      setScoreEl.style.display = "block"
       
       scoreEl.innerText = "Your score is... \n" + secondsLeft.toString() + " units!\n"; 
       document.getElementById("formBox").addEventListener("submit", function(event){
@@ -117,14 +119,11 @@ function startTimer() {
         }
         
         var highScores = JSON.parse(localStorage.getItem("highScores"));
-        
-        console.log(scoreInputEl)
 
         highScores.push(scoreInputEl.value + "------" + secondsLeft);
         
         localStorage.setItem("highScores", JSON.stringify(highScores))
-        
-        console.log(highScores)
+
         displayHighScores();
         
       })
@@ -138,15 +137,39 @@ function startTimer() {
 
     // for loop for more than one, append
 
-  var retrievedData = localStorage.getItem("highScores")
+  var highScores = JSON.parse(localStorage.getItem("highScores"))
 
-  highScores = JSON.parse(retrievedData)
-
-  document.body.innerHTML = `<h1 id="nameColumns">${highScores}</h1>`
-
-  }
-
+  // highScores = JSON.parse(retrievedData)
+  
+//   
+//   document.body.append(scoreList)
+// console.log(highScores)
+  
+ document.body.innerHTML = `<h1 id="nameColumns">High Scores</h1>
+  <ul id=scoreList></ul><button id="clearButton">C L E A R</button>`
+  var scoreList = document.getElementById("scoreList")
+  
+  for (i = 0; i < highScores.length; i++){
     
+    var liNode = document.createElement("li")
+    
+    liNode.innerHTML = highScores[i]
+    scoreList.append(liNode)
+  }
+  
+
+  
+  clearButton.addEventListener("click", function(){
+  clearLocalStorage();
+  });
+}
+
+function clearLocalStorage(){
+  localStorage.clear();
+}    
+
+
+
     startButtonEl.addEventListener("click", function(){
         startTimer();
         displayQuestion(questionCount);
