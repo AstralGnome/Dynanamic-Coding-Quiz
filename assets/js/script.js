@@ -109,9 +109,11 @@ function startTimer() {
       scoreEl.style.display = "block"
       formBoxEl.style.display = "block"
       setScoreEl.style.display = "block"
-      
+      //--------------------------------------------------------------------------------//
       scoreEl.innerText = "Your score is... \n" + secondsLeft.toString() + " units!\n"; 
+      
       document.getElementById("formBox").addEventListener("submit", function(event){
+        
         event.preventDefault();
         
         if (localStorage.getItem("highScores") === null) {
@@ -132,42 +134,48 @@ function startTimer() {
   
   
   function displayHighScores(){
-    // localStorage.getItem("highScores", JSON.parse(highScores))
-    //want to read from local storage display data on page.
-
-    // for loop for more than one, append
-
-  var highScores = JSON.parse(localStorage.getItem("highScores"))
-
-  // highScores = JSON.parse(retrievedData)
-  
-//   
-//   document.body.append(scoreList)
-// console.log(highScores)
-  
- document.body.innerHTML = `<h1 id="nameColumns">High Scores</h1>
-  <ul id=scoreList></ul><button id="clearButton">C L E A R</button>`
-  var scoreList = document.getElementById("scoreList")
-  
-  for (i = 0; i < highScores.length; i++){
     
-    var liNode = document.createElement("li")
+    document.body.innerHTML = `<h1 id="nameColumns">High Scores</h1>
+    <ul id=scoreList></ul><button id="clearButton">C L E A R</button>
+    <button id=startOver>B E G I N &nbsp;&nbsp; A G A I N</button>`
     
-    liNode.innerHTML = highScores[i]
-    scoreList.append(liNode)
+    var scoreList = document.getElementById("scoreList")
+    
+    var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    
+    for (i = 0; i < highScores.length; i++){
+      
+      var liNode = document.createElement("li")
+      
+      liNode.innerHTML = highScores[i]
+      scoreList.append(liNode)
+          
+      // highScores.sort(function(a, b){
+      //       return
+      //       b.final - a.final
+      // })
+
+      // highScores.splice(5);
+      // localStorage.setItem("highScores");
   }
-  
+  //---------------------------------------------------------------------//
 
-  
   clearButton.addEventListener("click", function(){
   clearLocalStorage();
+  displayHighScores();
+  clearButton.style.display = "none"
   });
-}
+
+  startOver.addEventListener("click", function(){
+  location.reload();
+  });
+
+  }
+
 
 function clearLocalStorage(){
   localStorage.clear();
 }    
-
 
 
     startButtonEl.addEventListener("click", function(){

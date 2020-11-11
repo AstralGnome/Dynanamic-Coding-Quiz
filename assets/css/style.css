@@ -1,53 +1,53 @@
 body {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    position: relative;
-    width: 100%;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  align-items: center;
 }
 
 #start {
-    position: relative;
-    margin: 2em;
-    margin-top: 0;
-    padding: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    flex-wrap: wrap;
-    background-color: rgb(255, 80, 80);
-    border: solid 3px rgb(144, 0, 0);
-    border-radius: 7px;
-    color: rgb(248, 248, 248);
-    font-weight: 600;
-    font-stretch: wider;
+  position: relative;
+  margin: 2em;
+  margin-top: 0;
+  padding: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+  background-color: rgb(255, 80, 80);
+  border: solid 3px rgb(144, 0, 0);
+  border-radius: 7px;
+  color: rgb(248, 248, 248);
+  font-weight: 600;
+  font-stretch: wider;
 }
 
-#next {   
-    position: relative;
-    padding: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 2em;
-    flex-wrap: wrap;
-    background-color: rgb(255, 80, 80);
-    border: solid 3px rgb(144, 0, 0);
-    border-radius: 7px;
-    color: rgb(248, 248, 248);
-    font-weight: 600;
-    font-stretch: wider;
+#next {
+  position: relative;
+  padding: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 2em;
+  flex-wrap: wrap;
+  background-color: rgb(255, 80, 80);
+  border: solid 3px rgb(144, 0, 0);
+  border-radius: 7px;
+  color: rgb(248, 248, 248);
+  font-weight: 600;
+  font-stretch: wider;
 }
 
 .time {
-    margin: 25px;
-    padding: 15px;
-    position: relative;
-    background-color: rgb(255, 255, 255);
-    border: solid 3.5px rgb(255, 255, 255);
-    border-radius: 200px;
-    color: rgb(255, 255, 255);
-    font-weight: 400;
-    font-size: xx-large;
+  margin: 25px;
+  padding: 15px;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  border: solid 3.5px rgb(255, 255, 255);
+  border-radius: 200px;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  font-size: xx-large;
 }
 
 @keyframes glowing {
@@ -56,11 +56,11 @@ body {
     box-shadow: 0 0 5px rgb(255, 255, 255);
   }
   50% {
-    background-color:  rgb(48, 28, 228);
+    background-color: rgb(48, 28, 228);
     box-shadow: 0 0 20px rgb(48, 28, 228);
   }
   100% {
-    background-color:rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 0 5px rgb(255, 255, 255);
   }
 }
@@ -69,165 +69,197 @@ body {
 }
 
 #questions {
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    height: 250px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: rgb(255, 80, 80);
-    border: solid 4px rgb(144, 0, 0);
-    border-radius: 7px;
-    color: rgb(255, 255, 255);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(255, 80, 80);
+  border: solid 4px rgb(144, 0, 0);
+  border-radius: 7px;
+  color: rgb(255, 255, 255);
 }
 
 #submit {
-    position: relative;
-    margin-top: 2em;
-    padding: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    flex-wrap: wrap;
-    background-color: rgb(144, 0, 0);
-    border: solid 3px rgb(255, 80, 80);
-    border-radius: 7px;
-    color: rgb(248, 248, 248);
-    font-weight: 600;
-    font-stretch: wider;
+  position: relative;
+  margin-top: 2em;
+  padding: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+  background-color: rgb(144, 0, 0);
+  border: solid 3px rgb(255, 80, 80);
+  border-radius: 7px;
+  color: rgb(248, 248, 248);
+  font-weight: 600;
+  font-stretch: wider;
 
-    /* from here */
-    }
-      @keyframes glowing {
-        0% {
-          background-color: rgb(144, 0, 0);
-          box-shadow: 0 0 5px rgb(144, 0, 0);
-        }
-        50% {
-          background-color:  rgb(255, 80, 80);
-          box-shadow: 0 0 20px rgb(255, 80, 80);
-        }
-        100% {
-          background-color:rgb(144, 0, 0);
-          box-shadow: 0 0 5px rgb(144, 0, 0);
-        }
-      }
-      #submit {
-        animation: glowing 1300ms infinite;
+  /* from here */
+}
+@keyframes glowing {
+  0% {
+    background-color: rgb(144, 0, 0);
+    box-shadow: 0 0 5px rgb(144, 0, 0);
+  }
+  50% {
+    background-color: rgb(255, 80, 80);
+    box-shadow: 0 0 20px rgb(255, 80, 80);
+  }
+  100% {
+    background-color: rgb(144, 0, 0);
+    box-shadow: 0 0 5px rgb(144, 0, 0);
+  }
+}
+#submit {
+  animation: glowing 1300ms infinite;
 }
 
 h1 {
-    border-bottom: solid 4px rgb(144, 0, 0);
-    text-align: center;
-    padding-bottom: .5em;
-    padding-top: .25em;
-    font-size: 30px;
-    font-weight: 400;
+  border-bottom: solid 4px rgb(144, 0, 0);
+  text-align: center;
+  padding-bottom: 0.5em;
+  padding-top: 0.25em;
+  font-size: 30px;
+  font-weight: 400;
 }
 
-
-#a1, #a2, #a3, #a4 {
-    position: relative;
-    width: 100%;
-    padding: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    flex-wrap: wrap;
-    background-color: rgb(144, 0, 0);
-    border: solid 3px rgb(255, 80, 80);
-    border-radius: 7px;
-    color: rgb(248, 248, 248);
-    font-weight: 600;
-    font-stretch: wider;
+#a1,
+#a2,
+#a3,
+#a4 {
+  position: relative;
+  width: 100%;
+  padding: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+  background-color: rgb(144, 0, 0);
+  border: solid 3px rgb(255, 80, 80);
+  border-radius: 7px;
+  color: rgb(248, 248, 248);
+  font-weight: 600;
+  font-stretch: wider;
 }
 
 #score {
-    font-size: 20px;
-    text-align: center;
-    position: relative;
-    margin-top: 70px;
-    border: solid 3px rgb(255, 80, 80);
-    border-radius: 25px;
-    padding: 12px;
-    line-height: 1.5;
-    color: rgb(144, 0, 0);
-    box-shadow: 0px 0px 15px 1px rgb(255, 105, 105);
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  margin-top: 70px;
+  border: solid 3px rgb(255, 80, 80);
+  border-radius: 25px;
+  padding: 12px;
+  line-height: 1.5;
+  color: rgb(144, 0, 0);
+  box-shadow: 0px 0px 15px 1px rgb(255, 105, 105);
 }
 
-form {
+#formBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-    font-size: 20px;
-    text-align: center;
-    position: relative;
-    margin-top: 25px;
-    border-radius: 25px;
-    padding: 10px;
-    padding-top: 5px;
-    line-height: .75;
-    font-weight: 550;
-    font-stretch: wider;
-    color:  rgb(144, 0, 0);
+  font-size: 20px;
+  text-align: center;
+  margin-top: 25px;
+  border-radius: 25px;
+  padding: 10px;
+  padding-top: 5px;
+  line-height: 0.75;
+  font-weight: 550;
+  color: rgb(144, 0, 0);
 }
 
 #scoreInput {
-border: solid 3px snow;
-border-radius: 10px;
-color: rgb(255, 255, 255);
+  border: solid 3px snow;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
 }
-    @keyframes glowing {
-        0% {
-          background-color: rgb(144, 0, 0);
-          box-shadow: 0 0 5px rgb(144, 0, 0);
-        }
-        50% {
-          background-color:  rgb(255, 80, 80);
-          box-shadow: 0 0 20px rgb(255, 80, 80);
-        }
-        100% {
-          background-color:rgb(144, 0, 0);
-          box-shadow: 0 0 5px rgb(144, 0, 0);
-        }
-      }
-      #scoreInput {
-        animation: glowing 2000ms infinite;
-      }
-
-      #scoreList {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        position: relative;
-        align-items: center;
-      }
-
-      #scoreList li {
-        width: auto;
-        border: solid 3px rgb(144, 0, 0);
-        border-radius: 7px;
-        background-color:  rgb(255, 80, 80);
-        color: rgb(255, 255, 255);
-        margin: 5px;
-        padding: 8px;
-
-      }
-
-      #clearButton, #setScore{
-
-    position: relative;
-    padding: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-top: 2em;
-    flex-wrap: wrap;
+@keyframes glowing {
+  0% {
+    background-color: rgb(144, 0, 0);
+    box-shadow: 0 0 5px rgb(144, 0, 0);
+  }
+  50% {
     background-color: rgb(255, 80, 80);
-    border: solid 3px rgb(144, 0, 0);
-    border-radius: 7px;
-    color: rgb(248, 248, 248);
-    font-weight: 600;
-    font-stretch: wider;
-      }
+    box-shadow: 0 0 20px rgb(255, 80, 80);
+  }
+  100% {
+    background-color: rgb(144, 0, 0);
+    box-shadow: 0 0 5px rgb(144, 0, 0);
+  }
+}
+#scoreInput {
+  animation: glowing 2000ms infinite;
+}
 
-      #nameColumns {
-        margin-bottom: 20px;
-      }
+#scoreList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  align-items: center;
+}
+
+#scoreList li {
+  width: auto;
+  border: solid 3px rgb(144, 0, 0);
+  border-radius: 7px;
+  background-color: rgb(255, 80, 80);
+  color: rgb(255, 255, 255);
+  margin: 5px;
+  padding: 8px;
+}
+
+#clearButton {
+  position: relative;
+  padding: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 2em;
+  flex-wrap: wrap;
+  background-color: rgb(255, 80, 80);
+  border: solid 3px rgb(144, 0, 0);
+  border-radius: 7px;
+  color: rgb(248, 248, 248);
+  font-weight: 600;
+  font-stretch: wider;
+}
+
+#nameColumns {
+  margin-bottom: 20px;
+}
+
+#setScore {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.75em;
+  padding: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(255, 80, 80);
+  border: solid 3px rgb(144, 0, 0);
+  border-radius: 7px;
+  color: rgb(248, 248, 248);
+}
+
+#startOver {
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 2em;
+  background-color: rgb(255, 80, 80);
+  border: solid 3px rgb(144, 0, 0);
+  border-radius: 7px;
+  color: rgb(248, 248, 248);
+  font-weight: 600;
+  font-stretch: wider;
+}
